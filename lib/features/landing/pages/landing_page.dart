@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:async';
 
 import 'package:ekas/constants/divider.constant.dart';
@@ -41,45 +43,61 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                const Text(
-                  "E-KAS",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-                ),
-                divide12,
-                const Text(
-                  "Solusi Masalah Keuangan",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-                ),
-              ],
-            ),
-            Image.asset(
-              "assets/images/splash.png",
-              width: MediaQuery.of(context).size.width / 1.3,
-              fit: BoxFit.fitWidth,
-            ),
-            AnimatedContainer(
-                width: animate ? 174 : 0,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(
-                        context, HomePage.ROUTE_NAME);
-                  },
-                  child: animate
-                      ? const Text(
-                          "Mulai",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600, color: Colors.white),
-                        )
-                      : Container(),
-                ),
-                duration: const Duration(milliseconds: 500)),
-          ],
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: Color(0xff24C3CD),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  const Text(
+                    "E-KAS",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                  ),
+                  divide12,
+                  const Text(
+                    "Solusi Manajemen Keuangan",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+              Image.asset(
+                "assets/images/splash.png",
+                width: MediaQuery.of(context).size.width / 1.3,
+                fit: BoxFit.fitWidth,
+              ),
+              AnimatedContainer(
+                  width: animate ? 174 : 0,
+                  child: SizedBox(
+                    width: 174,
+                    height: 56,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          Color(0xff007E9C),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, HomePage.ROUTE_NAME);
+                      },
+                      child: animate
+                          ? const Text(
+                              "Mulai",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 24,
+                                  color: Colors.white),
+                            )
+                          : Container(),
+                    ),
+                  ),
+                  duration: const Duration(milliseconds: 500)),
+            ],
+          ),
         ),
       ),
     );
