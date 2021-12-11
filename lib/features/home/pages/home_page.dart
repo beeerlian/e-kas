@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
 
@@ -188,6 +188,74 @@ Widget _buildBody() {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'November 2021',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Palette.primary,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  // Image.asset(
+                                  //   width: 20,
+                                  //   fit: BoxFit.fitWidth,
+                                  // ),
+                                  Text(
+                                    'Pemasukan',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff929292),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Rp. 5.200.000',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff4ECB71),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                'Pengeluaran',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff929292),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Rp. 4.200.000',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xffF24E1E),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 15,
@@ -202,6 +270,18 @@ Widget _buildBody() {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Catatan Keuangan',
+                            style: TextStyle(
+                              color: Palette.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       width: 15,
@@ -212,6 +292,18 @@ Widget _buildBody() {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Penghasilan',
+                            style: TextStyle(
+                              color: Palette.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -229,6 +321,18 @@ Widget _buildBody() {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Pengeluaran',
+                            style: TextStyle(
+                              color: Palette.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       width: 15,
@@ -239,6 +343,18 @@ Widget _buildBody() {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Segera Datang',
+                            style: TextStyle(
+                              color: Palette.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
