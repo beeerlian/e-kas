@@ -1,9 +1,9 @@
-import 'package:ekas/component/image/network_image_placeholder.dart';
-import 'package:ekas/component/svg/svg_ui.dart';
-import 'package:ekas/component/text/text_widget.dart';
 import 'package:ekas/configs/iconly_icons.dart';
 import 'package:ekas/constants/dimens.constant.dart';
 import 'package:ekas/constants/divider.constant.dart';
+import 'package:ekas/presentation/component/image/network_image_placeholder.dart';
+import 'package:ekas/presentation/component/svg/svg_ui.dart';
+import 'package:ekas/presentation/component/text/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

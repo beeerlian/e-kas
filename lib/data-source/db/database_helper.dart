@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:ekas/features/common/encrypt.dart';
-import 'package:ekas/features/models/finance.dart';
+import 'package:ekas/common/encrypt.dart';
+import 'package:ekas/presentation/models/finance.dart';
 import 'package:sqflite_sqlcipher/sqflite.dart' as sqf;
 
 class DatabaseHelper {

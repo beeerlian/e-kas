@@ -1,5 +1,5 @@
-import 'package:ekas/features/home/pages/home_page.dart';
-import 'package:ekas/features/landing/pages/landing_page.dart';
+import 'package:ekas/presentation/home/pages/home_page.dart';
+import 'package:ekas/presentation/landing/pages/landing_page.dart';
 import 'package:flutter/material.dart';
 
 class RouteConfig {

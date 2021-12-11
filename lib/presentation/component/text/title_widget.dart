@@ -1,4 +1,4 @@
-import 'package:ekas/component/text/text_widget.dart';
+import 'package:ekas/presentation/component/text/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

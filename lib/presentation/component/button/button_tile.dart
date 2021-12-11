@@ -1,6 +1,6 @@
-import 'package:ekas/component/text/text_widget.dart';
 import 'package:ekas/configs/iconly_icons.dart';
 import 'package:ekas/constants/dimens.constant.dart';
+import 'package:ekas/presentation/component/text/text_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'icon_ui.dart';

@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:ekas/constants/divider.constant.dart';
-import 'package:ekas/features/home/pages/home_page.dart';
+import 'package:ekas/presentation/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
