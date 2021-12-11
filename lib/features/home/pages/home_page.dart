@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: _buildAppBar(),
+        backgroundColor: Palette.primary,
         body: _buildBody(),
       ),
     );
@@ -41,59 +42,121 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildBody() {
-    return Column(
+//   Widget _buildBody() {
+//     return Column(
+//       children: [
+//         Container(
+//           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+//           width: double.infinity,
+//           // height: 280,
+//           child: Column(
+//             // ignore: prefer_const_literals_to_create_immutables
+//             children: [
+//               Text(
+//                 'Kas Utama',
+//                 style: TextStyle(
+//                   fontSize: 14,
+//                   fontWeight: FontWeight.w700,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 4,
+//               ),
+//               Text(
+//                 "Rp. 1.000.000",
+//                 style: TextStyle(
+//                   fontSize: 36,
+//                   fontWeight: FontWeight.w700,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               SizedBox(
+//                 width: 112,
+//                 height: 36,
+//                 child: ElevatedButton(
+//                   onPressed: () {},
+//                   child: Text('Tambah'),
+//                   style: ButtonStyle(
+//                     backgroundColor: MaterialStateProperty.all(
+//                       Palette.primary,
+//                     ),
+//                     elevation: MaterialStateProperty.all(0),
+//                     side: MaterialStateProperty.all(
+//                       BorderSide(
+//                         width: 2,
+//                         color: Colors.white,
+//                       ),
+//                     ),
+//                     shape: MaterialStateProperty.all(
+//                       RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(12),
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+}
+
+Widget _buildBody() {
+  return Center(
+    child: Column(
       children: [
         Expanded(
           flex: 1,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             width: double.infinity,
-            height: 280,
-            color: Palette.primary,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
                   'Kas Utama',
                   style: TextStyle(
                     fontSize: 14,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(
-                  height: 4,
+                  height: 7,
                 ),
                 Text(
-                  "Rp. 1.000.000",
+                  'Rp. 1.000.000',
                   style: TextStyle(
                     fontSize: 36,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 7,
                 ),
                 SizedBox(
                   width: 112,
                   height: 36,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('Tambah'),
+                    child: Text(
+                      'Tambah',
+                    ),
                     style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
                       backgroundColor: MaterialStateProperty.all(
                         Palette.primary,
-                      ),
-                      elevation: MaterialStateProperty.all(0),
-                      side: MaterialStateProperty.all(
-                        BorderSide(
-                          width: 2,
-                          color: Colors.white,
-                        ),
                       ),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
+                          side: BorderSide(
+                            color: Colors.white,
+                            width: 2,
+                          ),
                         ),
                       ),
                     ),
@@ -106,16 +169,85 @@ class _HomePageState extends State<HomePage> {
         Expanded(
           flex: 3,
           child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              // color: Colors.green,
+              color: Color(0xffE6E6E6),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40),
                 topRight: Radius.circular(40),
               ),
             ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 295,
+                  height: 130,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 140,
+                      height: 85,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Container(
+                      width: 140,
+                      height: 85,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 140,
+                      height: 85,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Container(
+                      width: 140,
+                      height: 85,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ],
-    );
-  }
+    ),
+  );
 }
