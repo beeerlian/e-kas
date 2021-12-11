@@ -1,24 +1,47 @@
 import 'package:hive/hive.dart';
 
-part 'finance.g.dart';
-
 @HiveType(typeId: 1)
 class Finance {
-  @HiveField(0)
-  String nominal;
-
-  @HiveField(1)
+  int id;
+  int nominal;
   String desc;
-
-  @HiveField(2)
   String date;
 
-  @HiveField(3)
-  bool isIncome;
+  Finance({
+    required this.id,
+    required this.desc,
+    required this.date,
+    required this.nominal,
+  });
 
-  Finance(
-      {required this.desc,
-      required this.date,
-      required this.nominal,
-      required this.isIncome});
+  factory Finance.fromJson(Map<String, dynamic> json) => Finance(
+      id: json["id"],
+      nominal: json["nominal"],
+      desc: json["desc"],
+      date: json["date"]);
+
+  Map<String, dynamic> toJson() =>
+      {"id": id, "nominal": nominal, "desc": desc, "date": date};
 }
+
+
+// @HiveType(typeId: 1)
+// class Finance {
+//   @HiveField(0)
+//   String nominal;
+
+//   @HiveField(1)
+//   String desc;
+
+//   @HiveField(2)
+//   String date;
+
+//   @HiveField(3)
+//   bool isIncome;
+
+//   Finance(
+//       {required this.desc,
+//       required this.date,
+//       required this.nominal,
+//       required this.isIncome});
+// }

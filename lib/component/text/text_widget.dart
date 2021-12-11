@@ -1,6 +1,6 @@
 import 'package:ekas/component/button/rounded_button.dart';
+import 'package:ekas/configs/colors.config.dart';
 import 'package:ekas/constants/dimens.constant.dart';
-import 'package:ekas/utils/colors.config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

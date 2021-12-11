@@ -1,6 +1,6 @@
+import 'package:ekas/configs/colors.config.dart';
+import 'package:ekas/configs/view_util.dart';
 import 'package:ekas/constants/dimens.constant.dart';
-import 'package:ekas/utils/colors.config.dart';
-import 'package:ekas/utils/view_util.dart';
 import 'package:flutter/material.dart';
 
 enum RoundedButtonVariant { DEFAULT, OUTLINED }

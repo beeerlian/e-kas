@@ -29,6 +29,13 @@ environment:
 dependencies:
   cached_network_image: ^3.2.0
   cupertino_icons: ^1.0.2
+  dartz: ^0.10.0-nullsafety.2
+  data_connection_checker:
+    git:
+      url: https://github.com/chornthorn/data_connection_checker.git
+      ref: master
+  encrypt: ^5.0.1
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_spinkit: ^5.1.0
@@ -36,6 +43,8 @@ dependencies:
   hive: ^2.0.4
   hive_flutter: ^1.1.0
   path_provider: ^2.0.8
+  sqflite: ^2.0.1
+  sqflite_sqlcipher: ^2.1.0
 
 dev_dependencies:
   build_runner: ^2.1.5

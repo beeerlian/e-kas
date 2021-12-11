@@ -1,8 +1,8 @@
 import 'package:ekas/component/text/text_widget.dart';
+import 'package:ekas/configs/colors.config.dart';
+import 'package:ekas/configs/size.config.dart';
 import 'package:ekas/constants/dimens.constant.dart';
 import 'package:ekas/constants/divider.constant.dart';
-import 'package:ekas/utils/colors.config.dart';
-import 'package:ekas/utils/size.config.dart';
 import 'package:flutter/material.dart';
 
 enum ButtonUIVariant { OUTLINE, DEFAULT, PLAINTEXT, PRIMARY_OUTLINED }

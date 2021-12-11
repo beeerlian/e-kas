@@ -1,4 +1,4 @@
-import 'package:ekas/utils/colors.config.dart';
+import 'package:ekas/configs/colors.config.dart';
 import 'package:flutter/material.dart';
 
 class IconUi extends StatelessWidget {

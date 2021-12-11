@@ -1,8 +1,8 @@
 import 'package:ekas/component/image/network_image_rounded.dart';
+import 'package:ekas/configs/colors.config.dart';
 import 'package:ekas/constants/dimens.constant.dart';
 import 'package:ekas/constants/divider.constant.dart';
 import 'package:ekas/features/home/components/messages_in_chip.dart';
-import 'package:ekas/utils/colors.config.dart';
 import 'package:flutter/material.dart';
 
 class RoomChatCard extends StatefulWidget {

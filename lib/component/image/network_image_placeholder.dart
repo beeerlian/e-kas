@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ekas/configs/colors.config.dart';
+import 'package:ekas/configs/iconly_icons.dart';
 import 'package:ekas/constants/dimens.constant.dart';
-import 'package:ekas/utils/colors.config.dart';
-import 'package:ekas/utils/iconly_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
