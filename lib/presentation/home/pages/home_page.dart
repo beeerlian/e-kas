@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore
 
 import 'dart:ui';
 
 import 'package:ekas/configs/colors.config.dart';
 import 'package:ekas/constants/dimens.constant.dart';
+import 'package:ekas/constants/divider.constant.dart';
+import 'package:ekas/presentation/component/svg/svg_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -206,10 +208,12 @@ Widget _buildBody() {
                             children: [
                               Row(
                                 children: [
-                                  // Image.asset(
-                                  //   width: 20,
-                                  //   fit: BoxFit.fitWidth,
-                                  // ),
+                                  SvgUI(
+                                    'assets/svgs/pemasukan.svg',
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  divideW6,
                                   Text(
                                     'Pemasukan',
                                     style: TextStyle(
@@ -233,12 +237,22 @@ Widget _buildBody() {
                           ),
                           Column(
                             children: [
-                              Text(
-                                'Pengeluaran',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff929292),
-                                ),
+                              Row(
+                                children: [
+                                  SvgUI(
+                                    'assets/svgs/pengeluaran.svg',
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  divideW6,
+                                  Text(
+                                    'Pengeluaran',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff929292),
+                                    ),
+                                  ),
+                                ],
                               ),
                               SizedBox(
                                 height: 5,
@@ -271,8 +285,9 @@ Widget _buildBody() {
                         color: Colors.white,
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          SvgUI('assets/svgs/emojione_money-bag.svg'),
                           Text(
                             'Catatan Keuangan',
                             style: TextStyle(
@@ -296,6 +311,7 @@ Widget _buildBody() {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          SvgUI('assets/svgs/penghasilan.svg'),
                           Text(
                             'Penghasilan',
                             style: TextStyle(
@@ -322,8 +338,9 @@ Widget _buildBody() {
                         color: Colors.white,
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          SvgUI('assets/svgs/emojione-v1_money-with-wings.svg'),
                           Text(
                             'Pengeluaran',
                             style: TextStyle(
@@ -345,8 +362,10 @@ Widget _buildBody() {
                         color: Colors.white,
                       ),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          SvgUI(
+                              'assets/svgs/noto-v1_exclamation-question-mark.svg'),
                           Text(
                             'Segera Datang',
                             style: TextStyle(
