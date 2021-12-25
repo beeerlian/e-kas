@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => di.locator<InvoiceBloc>()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: Colors.white,

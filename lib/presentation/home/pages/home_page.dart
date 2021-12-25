@@ -219,25 +219,28 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 140,
-                        height: 85,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SvgUI('assets/svgs/emojione_money-bag.svg'),
-                            Text(
-                              'Catatan Keuangan',
-                              style: TextStyle(
-                                color: Palette.primary,
-                                fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: 140,
+                          height: 85,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgUI('assets/svgs/emojione_money-bag.svg'),
+                              Text(
+                                'Catatan Keuangan',
+                                style: TextStyle(
+                                  color: Palette.primary,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
