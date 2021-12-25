@@ -70,4 +70,14 @@ class LocalDataSource {
     final result = await databaseHelper.getOutcomes();
     return result.map((data) => Finance.fromJson(data)).toList();
   }
+
+  Future<List<Finance>> getMonthlyOutcomes(String date) async {
+    final result = await databaseHelper.getMonthlyOutcomes(date);
+    return result.map((data) => Finance.fromJson(data)).toList();
+  }
+
+  Future<List<Finance>> getMonthlyIncomes(String date) async {
+    final result = await databaseHelper.getMonthlyIncomes(date);
+    return result.map((data) => Finance.fromJson(data)).toList();
+  }
 }

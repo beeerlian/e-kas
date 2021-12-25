@@ -41,7 +41,9 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY,
         nominal TEXT,
         desc TEXT,
-        date TEXT
+        date TEXT,
+        month TEXT,
+        year TEXT
       );
     """);
     await db.execute("""
@@ -49,7 +51,9 @@ class DatabaseHelper {
         id INTEGER PRIMARY KEY,
         nominal TEXT,
         desc TEXT,
-        date TEXT
+        date TEXT,
+        month TEXT,
+        year TEXT
       );
     """);
   }
@@ -146,5 +150,25 @@ class DatabaseHelper {
     } else {
       return null;
     }
+  }
+
+  Future<List<Map<String, dynamic>>> getMonthlyIncomes(String date) async {
+    final db = await database;
+    final List<Map<String, dynamic>> results = await db!.query(
+      _tblIncome,
+      where: 'month = ?',
+      whereArgs: [date],
+    );
+    return results;
+  }
+
+  Future<List<Map<String, dynamic>>> getMonthlyOutcomes(String date) async {
+    final db = await database;
+    final List<Map<String, dynamic>> results = await db!.query(
+      _tblOutcome,
+      where: 'month = ?',
+      whereArgs: [date],
+    );
+    return results;
   }
 }

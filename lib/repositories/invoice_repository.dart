@@ -98,4 +98,30 @@ class InvoiceRepository {
       return Left(DatabaseFailure(e.message));
     }
   }
+
+  Future<Either<Failure, List<Finance>>> getMonthlyIncomes(String date) async {
+    try {
+      final result = await localDataSource.getMonthlyIncomes(date);
+      return Right(result);
+    } on CacheException catch (e) {
+      return Left(CacheFailure(e.message));
+    } on DatabaseException catch (e) {
+      return Left(DatabaseFailure(e.message));
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<Either<Failure, List<Finance>>> getMonthlyOutcomes(String date) async {
+    try {
+      final result = await localDataSource.getMonthlyOutcomes(date);
+      return Right(result);
+    } on CacheException catch (e) {
+      return Left(CacheFailure(e.message));
+    } on DatabaseException catch (e) {
+      return Left(DatabaseFailure(e.message));
+    } catch (e) {
+      throw e;
+    }
+  }
 }

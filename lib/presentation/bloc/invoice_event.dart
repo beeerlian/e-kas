@@ -45,8 +45,15 @@ class GetMonthlyOutcomesEvent extends InvoiceEvent {
 }
 
 class GetMonthlyIncomesEvent extends InvoiceEvent {
-  GetMonthlyIncomesEvent();
+  int date;
+  GetMonthlyIncomesEvent(this.date);
+  @override
+  List<Object> get props => [];
+}
 
+class GetYearlyIncomesEvent extends InvoiceEvent {
+  int year;
+  GetYearlyIncomesEvent(this.year);
   @override
   List<Object> get props => [];
 }

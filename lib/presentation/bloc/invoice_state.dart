@@ -116,3 +116,23 @@ class MonthlyOutcomesIsEmpty extends InvoiceState {
   @override
   List<Object> get props => [];
 }
+
+class YearlyIncomesHasData extends InvoiceState {
+  InvoiceReport incomes;
+  InvoiceReport outcomes;
+  YearlyIncomesHasData(this.incomes, this.outcomes);
+  @override
+  List<Object> get props => [incomes, outcomes];
+}
+
+class YearlyIncomesHasError extends InvoiceState {
+  String message;
+  YearlyIncomesHasError(this.message);
+  @override
+  List<Object> get props => [message];
+}
+
+class YearlyIncomesIsEmpty extends InvoiceState {
+  @override
+  List<Object> get props => [];
+}
