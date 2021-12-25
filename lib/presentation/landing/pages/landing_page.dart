@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:ekas/configs/colors.config.dart';
 import 'package:ekas/constants/divider.constant.dart';
 import 'package:ekas/presentation/home/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,16 @@ class _LandingPageState extends State<LandingPage> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: Color(0xff24C3CD),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Palette.primary,
+                Colors.white,
+              ],
+            ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -78,6 +88,11 @@ class _LandingPageState extends State<LandingPage> {
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                           Color(0xff007E9C),
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(11),
+                          ),
                         ),
                       ),
                       onPressed: () {
