@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:ekas/common/encrypt.dart';
-import 'package:ekas/presentation/models/finance.dart';
+import 'package:ekas/domain/models/finance.dart';
 import 'package:sqflite_sqlcipher/sqflite.dart' as sqf;
 
 class DatabaseHelper {
@@ -15,7 +15,9 @@ class DatabaseHelper {
   static sqf.Database? _database;
 
   Future<sqf.Database?> get database async {
-    _database ??= await _initDb();
+    if (_database == null) {
+      _database = await _initDb();
+    }
     return _database;
   }
 
@@ -27,29 +29,29 @@ class DatabaseHelper {
     final databasePath = '$path/ekas.db';
 
     var db = await sqf.openDatabase(databasePath,
-        version: 1,
+        version: 2,
         onCreate: _onCreate,
         password: encrypt('Your secure password...'));
     return db;
   }
 
   void _onCreate(sqf.Database db, int version) async {
-    await db.execute('''
-      CREATE TABLE  $_tblIncome (
+    await db.execute("""
+      CREATE TABLE $_tblIncome(
         id INTEGER PRIMARY KEY,
-        nominal INTEGER,
+        nominal TEXT,
         desc TEXT,
-        date TEXT,
+        date TEXT
       );
-    ''');
-    await db.execute('''
-      CREATE TABLE  $_tblOutcome (
+    """);
+    await db.execute("""
+      CREATE TABLE  $_tblOutcome(
         id INTEGER PRIMARY KEY,
-        nominal INTEGER,
+        nominal TEXT,
         desc TEXT,
-        date TEXT,
+        date TEXT
       );
-    ''');
+    """);
   }
 
   Future<void> insertIncomesTransaction(

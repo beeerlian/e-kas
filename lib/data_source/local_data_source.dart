@@ -1,5 +1,5 @@
-import 'package:ekas/data-source/db/database_helper.dart';
-import 'package:ekas/presentation/models/finance.dart';
+import 'package:ekas/data_source/db/database_helper.dart';
+import 'package:ekas/domain/models/finance.dart';
 import 'package:ekas/utils/exception.dart';
 
 class LocalDataSource {

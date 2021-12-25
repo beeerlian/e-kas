@@ -6,6 +6,9 @@ import 'package:ekas/configs/colors.config.dart';
 import 'package:ekas/constants/dimens.constant.dart';
 import 'package:ekas/constants/divider.constant.dart';
 import 'package:ekas/presentation/component/svg/svg_ui.dart';
+import 'package:ekas/presentation/incomes/pages/incomes_page.dart';
+import 'package:ekas/presentation/input_ivoice/pages/input_invoice.dart';
+import 'package:ekas/presentation/outcome/pages/outcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -44,345 +47,296 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-//   Widget _buildBody() {
-//     return Column(
-//       children: [
-//         Container(
-//           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-//           width: double.infinity,
-//           // height: 280,
-//           child: Column(
-//             // ignore: prefer_const_literals_to_create_immutables
-//             children: [
-//               Text(
-//                 'Kas Utama',
-//                 style: TextStyle(
-//                   fontSize: 14,
-//                   fontWeight: FontWeight.w700,
-//                 ),
-//               ),
-//               SizedBox(
-//                 height: 4,
-//               ),
-//               Text(
-//                 "Rp. 1.000.000",
-//                 style: TextStyle(
-//                   fontSize: 36,
-//                   fontWeight: FontWeight.w700,
-//                 ),
-//               ),
-//               SizedBox(
-//                 height: 5,
-//               ),
-//               SizedBox(
-//                 width: 112,
-//                 height: 36,
-//                 child: ElevatedButton(
-//                   onPressed: () {},
-//                   child: Text('Tambah'),
-//                   style: ButtonStyle(
-//                     backgroundColor: MaterialStateProperty.all(
-//                       Palette.primary,
-//                     ),
-//                     elevation: MaterialStateProperty.all(0),
-//                     side: MaterialStateProperty.all(
-//                       BorderSide(
-//                         width: 2,
-//                         color: Colors.white,
-//                       ),
-//                     ),
-//                     shape: MaterialStateProperty.all(
-//                       RoundedRectangleBorder(
-//                         borderRadius: BorderRadius.circular(12),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-}
-
-Widget _buildBody() {
-  return Center(
-    child: Column(
-      children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                Text(
-                  'Kas Utama',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 7,
-                ),
-                Text(
-                  'Rp. 1.000.000',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 7,
-                ),
-                SizedBox(
-                  width: 112,
-                  height: 36,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Tambah',
+  Widget _buildBody() {
+    return Center(
+      child: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  Text(
+                    'Kas Utama',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                     ),
-                    style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(0),
-                      backgroundColor: MaterialStateProperty.all(
-                        Palette.primary,
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Text(
+                    'Rp. 1.000.000',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  SizedBox(
+                    width: 112,
+                    height: 36,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, Inputinvoice.ROUTE_NAME);
+                      },
+                      child: Text(
+                        'Tambah',
                       ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          side: BorderSide(
-                            color: Colors.white,
-                            width: 2,
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor: MaterialStateProperty.all(
+                          Palette.primary,
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: BorderSide(
+                              color: Colors.white,
+                              width: 2,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 3,
-          child: Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Color(0xffE6E6E6),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
+                ],
               ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 295,
-                  height: 130,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Color(0xffE6E6E6),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 295,
+                    height: 130,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'November 2021',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Palette.primary,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    SvgUI(
+                                      'assets/svgs/pemasukan.svg',
+                                      width: 20,
+                                      height: 20,
+                                    ),
+                                    divideW6,
+                                    Text(
+                                      'Pemasukan',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff929292),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Rp. 5.200.000',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff4ECB71),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    SvgUI(
+                                      'assets/svgs/pengeluaran.svg',
+                                      width: 20,
+                                      height: 20,
+                                    ),
+                                    divideW6,
+                                    Text(
+                                      'Pengeluaran',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff929292),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Rp. 4.200.000',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xffF24E1E),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'November 2021',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Palette.primary,
+                      Container(
+                        width: 140,
+                        height: 85,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SvgUI('assets/svgs/emojione_money-bag.svg'),
+                            Text(
+                              'Catatan Keuangan',
+                              style: TextStyle(
+                                color: Palette.primary,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Column(
+                      SizedBox(
+                        width: 15,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, IncomesPage.ROUTE_NAME);
+                        },
+                        child: Container(
+                          width: 140,
+                          height: 85,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Row(
-                                children: [
-                                  SvgUI(
-                                    'assets/svgs/pemasukan.svg',
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  divideW6,
-                                  Text(
-                                    'Pemasukan',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0xff929292),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
+                              SvgUI('assets/svgs/penghasilan.svg'),
                               Text(
-                                'Rp. 5.200.000',
+                                'Penghasilan',
                                 style: TextStyle(
+                                  color: Palette.primary,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xff4ECB71),
                                 ),
                               ),
                             ],
                           ),
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  SvgUI(
-                                    'assets/svgs/pengeluaran.svg',
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  divideW6,
-                                  Text(
-                                    'Pengeluaran',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0xff929292),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Rp. 4.200.000',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xffF24E1E),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 140,
-                      height: 85,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SvgUI('assets/svgs/emojione_money-bag.svg'),
-                          Text(
-                            'Catatan Keuangan',
-                            style: TextStyle(
-                              color: Palette.primary,
-                              fontWeight: FontWeight.bold,
-                            ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, OutcomesPage.ROUTE_NAME);
+                        },
+                        child: Container(
+                          width: 140,
+                          height: 85,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
                           ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Container(
-                      width: 140,
-                      height: 85,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgUI('assets/svgs/penghasilan.svg'),
-                          Text(
-                            'Penghasilan',
-                            style: TextStyle(
-                              color: Palette.primary,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgUI(
+                                  'assets/svgs/emojione-v1_money-with-wings.svg'),
+                              Text(
+                                'Pengeluaran',
+                                style: TextStyle(
+                                  color: Palette.primary,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 140,
-                      height: 85,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                      SizedBox(
+                        width: 15,
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SvgUI('assets/svgs/emojione-v1_money-with-wings.svg'),
-                          Text(
-                            'Pengeluaran',
-                            style: TextStyle(
-                              color: Palette.primary,
-                              fontWeight: FontWeight.bold,
+                      Container(
+                        width: 140,
+                        height: 85,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            SvgUI(
+                                'assets/svgs/noto-v1_exclamation-question-mark.svg'),
+                            Text(
+                              'Segera Datang',
+                              style: TextStyle(
+                                color: Palette.primary,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Container(
-                      width: 140,
-                      height: 85,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SvgUI(
-                              'assets/svgs/noto-v1_exclamation-question-mark.svg'),
-                          Text(
-                            'Segera Datang',
-                            style: TextStyle(
-                              color: Palette.primary,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }

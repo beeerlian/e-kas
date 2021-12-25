@@ -1,12 +1,12 @@
 // @HiveType(typeId: 1)
 class Finance {
-  int id;
-  int nominal;
+  int? id;
+  String nominal;
   String desc;
   String date;
 
   Finance({
-    required this.id,
+    this.id,
     required this.desc,
     required this.date,
     required this.nominal,

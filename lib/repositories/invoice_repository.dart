@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ekas/data-source/local_data_source.dart';
-import 'package:ekas/presentation/models/finance.dart';
+import 'package:ekas/data_source/local_data_source.dart';
+import 'package:ekas/domain/models/finance.dart';
 import 'package:ekas/utils/exception.dart';
 import 'package:ekas/utils/failure.dart';
 
