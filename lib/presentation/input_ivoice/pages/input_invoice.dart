@@ -155,6 +155,7 @@ class _InputinvoiceState extends State<Inputinvoice> {
                       width: 1,
                       color: Palette.border,
                     ),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: countryDropDown,
@@ -178,6 +179,7 @@ class _InputinvoiceState extends State<Inputinvoice> {
                         width: 1,
                         color: Palette.border,
                       ),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Align(
@@ -197,8 +199,11 @@ class _InputinvoiceState extends State<Inputinvoice> {
                   weight: FontWeight.bold,
                 ),
                 divide14,
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                  ),
                   child: EditTextField(
                     prefixIcon: Container(
                       width: 50,
@@ -222,8 +227,11 @@ class _InputinvoiceState extends State<Inputinvoice> {
                   weight: FontWeight.bold,
                 ),
                 divide14,
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                  ),
                   child: EditTextField(
                     inputTextHeight: 1.5,
                     controller: keterangan,
