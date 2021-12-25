@@ -118,81 +118,134 @@ class _InputinvoiceState extends State<Inputinvoice> {
         }
         return SafeArea(
           child: Scaffold(
-            body: Padding(
+            appBar: AppBar(
+              leading: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: Icon(
+                  Icons.keyboard_arrow_left,
+                  color: Colors.black,
+                ),
+              ),
+              backgroundColor: Color(0xffECECEC),
+              elevation: 0,
+            ),
+            backgroundColor: Color(0xffECECEC),
+            body: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
-              child: ListView(
-                children: [
-                  TextWidget(
-                    "Tambah Data Keuangan",
-                    color: Palette.primary,
-                    align: TextAlign.center,
+              children: [
+                TextWidget(
+                  "Tambah Data Keuangan",
+                  color: Palette.primary,
+                  align: TextAlign.center,
+                  size: TextWidgetSize.LARGE,
+                  weight: FontWeight.w700,
+                ),
+                divide64,
+                TextWidget(
+                  "Tipe Pemasukan",
+                  color: Palette.primary,
+                  size: TextWidgetSize.SEMI_MEDIUM,
+                  weight: FontWeight.bold,
+                ),
+                divide14,
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 1,
+                      color: Palette.border,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  divide32,
-                  TextWidget(
-                    "Tipe Pemasukan",
-                    color: Palette.primary,
-                  ),
-                  Container(
+                  child: countryDropDown,
+                ),
+                divide14,
+                TextWidget(
+                  "Tanggal",
+                  color: Palette.primary,
+                  size: TextWidgetSize.SEMI_MEDIUM,
+                  weight: FontWeight.bold,
+                ),
+                divide14,
+                InkWell(
+                  onTap: pickDate,
+                  child: Container(
+                    height: 45,
+                    padding: EdgeInsets.only(left: 15),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Palette.border)),
-                    child: countryDropDown,
-                  ),
-                  TextWidget(
-                    "Tanggal",
-                    color: Palette.primary,
-                  ),
-                  InkWell(
-                    onTap: pickDate,
-                    child: Container(
-                      height: 45,
-                      padding: EdgeInsets.only(left: 15),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: Palette.border)),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: TextWidget(
-                          dateInvoice,
-                          color: Palette.primary,
-                        ),
+                      border: Border.all(
+                        width: 1,
+                        color: Palette.border,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextWidget(
+                        dateInvoice,
+                        color: Palette.primary,
                       ),
                     ),
                   ),
-                  TextWidget(
-                    "Jumlah",
-                    color: Palette.primary,
-                  ),
-                  EditTextField(
-                      prefixIcon: Container(
-                        width: 50,
-                        padding: EdgeInsets.only(left: 15),
-                        alignment: Alignment.centerLeft,
-                        child: TextWidget(
-                          "Rp. ",
-                          color: Palette.primary,
-                        ),
+                ),
+                divide14,
+                TextWidget(
+                  "Jumlah",
+                  color: Palette.primary,
+                  size: TextWidgetSize.SEMI_MEDIUM,
+                  weight: FontWeight.bold,
+                ),
+                divide14,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: EditTextField(
+                    prefixIcon: Container(
+                      width: 50,
+                      padding: EdgeInsets.only(left: 15),
+                      alignment: Alignment.centerLeft,
+                      child: TextWidget(
+                        "Rp. ",
+                        color: Palette.primary,
                       ),
-                      inputTextHeight: 1.5,
-                      controller: jumlah),
-                  TextWidget(
-                    "Keterangan",
-                    color: Palette.primary,
+                    ),
+                    inputTextHeight: 1.5,
+                    controller: jumlah,
+                    isNumber: true,
                   ),
-                  EditTextField(inputTextHeight: 1.5, controller: keterangan),
-                  divide12,
-                  Row(
-                    children: [
-                      Expanded(
-                          child: RoundedButton(
-                        press: () {},
+                ),
+                divide14,
+                TextWidget(
+                  "Keterangan",
+                  color: Palette.primary,
+                  size: TextWidgetSize.SEMI_MEDIUM,
+                  weight: FontWeight.bold,
+                ),
+                divide14,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: EditTextField(
+                    inputTextHeight: 1.5,
+                    controller: keterangan,
+                  ),
+                ),
+                divide20,
+                Row(
+                  children: [
+                    Expanded(
+                      child: RoundedButton(
+                        press: () => Navigator.pop(context),
                         text: "Batal",
-                      )),
-                      divideW12,
-                      Expanded(
-                          child: RoundedButton(
+                        color: Palette.error,
+                        textColor: Colors.white,
+                      ),
+                    ),
+                    divideW12,
+                    Expanded(
+                      child: RoundedButton(
                         isLoading: isLoading,
                         text: "Simpan",
+                        textColor: Colors.white,
                         press: () {
                           if (_selectedTypeInvoice == TypeInvoice.pemasukan) {
                             inputIncome();
@@ -201,11 +254,11 @@ class _InputinvoiceState extends State<Inputinvoice> {
                             inputOutcome();
                           }
                         },
-                      ))
-                    ],
-                  )
-                ],
-              ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
         );
