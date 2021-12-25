@@ -78,18 +78,6 @@ class _IncomesPageState extends State<IncomesPage> {
                         totalIncome: state.incomes[index].nominal,
                         date: state.incomes[index].date,
                       );
-                      // return Column(
-                      //   children: [
-                      //     TextWidget(
-                      //       state.incomes[index].nominal,
-                      //       color: Palette.primary,
-                      //     ),
-                      //     TextWidget(
-                      //       state.incomes[index].date,
-                      //       color: Palette.primary,
-                      //     ),
-                      //   ],
-                      // );
                     },
                   ),
                 ),
